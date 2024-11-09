@@ -19,9 +19,16 @@ function App() {
     setSelectedValue(null); // Reset the selected value
   }
 
+  const handleResetScore = () => {
+    setPoints(0);
+  }
+
 
   return (
     <>
+      <div className="absolute top-4 right-4">
+        <button className="bg-black text-white p-2 rounded">Show Rules</button>
+      </div>
       <h1 className="text-3xl font-bold underline text-center mb-5">
         Dice Game
       </h1>
@@ -46,6 +53,11 @@ function App() {
       <div className="mt-5 text-center">
         <h2 className="text-2xl">Points Earned: {points}</h2>
       </div>
+
+      <div className="flex justify-center mt-4">
+        <button onClick={handleResetScore} className="bg-black text-white p-2 rounded">Reset Score</button>
+      </div>
+      
     </>
   );
 }
